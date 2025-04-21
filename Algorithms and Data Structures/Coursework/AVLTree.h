@@ -1,9 +1,9 @@
-#pragma once
+п»ї#pragma once
 #include "Classes.h"
 #include "SimTable.h"
 #include "SimOwningList.h"
 
-// АВЛ-дерево узел
+// РђР’Р›-РґРµСЂРµРІРѕ СѓР·РµР»
 struct Tree
 {
 	Client* ClientInfo = nullptr;

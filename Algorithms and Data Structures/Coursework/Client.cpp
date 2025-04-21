@@ -1,7 +1,7 @@
-#include "Classes.h"
+п»ї#include "Classes.h"
 using namespace std;
 
-// Функции класса клиент
+// Р¤СѓРЅРєС†РёРё РєР»Р°СЃСЃР° РєР»РёРµРЅС‚
 
 Client::Client(string passport, string passport_info, string FIO, int year_bith, string adress)
 {

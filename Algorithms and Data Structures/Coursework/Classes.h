@@ -1,16 +1,16 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 using namespace std;
 
-// Класс Клиент
+// РљР»Р°СЃСЃ РљР»РёРµРЅС‚
 class Client
 {
 private:
-	string Passport;	 // Номер паспорта
-	string PassportInfo; // Кто выдал паспорт
-	string FIO;			 // ФИО
-	int YearOfBirth;	 // год рождения
-	string Adress;		 // Адрес проживания
+	string Passport;	 // РќРѕРјРµСЂ РїР°СЃРїРѕСЂС‚Р°
+	string PassportInfo; // РљС‚Рѕ РІС‹РґР°Р» РїР°СЃРїРѕСЂС‚
+	string FIO;			 // Р¤РРћ
+	int YearOfBirth;	 // РіРѕРґ СЂРѕР¶РґРµРЅРёСЏ
+	string Adress;		 // РђРґСЂРµСЃ РїСЂРѕР¶РёРІР°РЅРёСЏ
 
 public:
 	Client(string, string, string, int, string);
@@ -21,7 +21,7 @@ public:
 	string GetAdress() const;
 };
 
-// Класс симкарты
+// РљР»Р°СЃСЃ СЃРёРјРєР°СЂС‚С‹
 class Sim
 {
 public:
@@ -34,10 +34,10 @@ public:
 	};
 
 private:
-	string SIM_ID;	   // Номер Симкарты
-	Tarrif TarrifInfo; // Тарриф симкарты
-	int YearRelease;   // Год выпуска
-	bool Available;	   // Доступность
+	string SIM_ID;	   // РќРѕРјРµСЂ РЎРёРјРєР°СЂС‚С‹
+	Tarrif TarrifInfo; // РўР°СЂСЂРёС„ СЃРёРјРєР°СЂС‚С‹
+	int YearRelease;   // Р“РѕРґ РІС‹РїСѓСЃРєР°
+	bool Available;	   // Р”РѕСЃС‚СѓРїРЅРѕСЃС‚СЊ
 
 public:
 	Sim();
@@ -51,14 +51,14 @@ public:
 	void SetAvailable(bool);
 };
 
-// Класс о владении симкартов клиентом
+// РљР»Р°СЃСЃ Рѕ РІР»Р°РґРµРЅРёРё СЃРёРјРєР°СЂС‚РѕРІ РєР»РёРµРЅС‚РѕРј
 class SimOwning
 {
 private:
-	string Passport;		 // Номер паспорта
-	string SimID;			 // Номер симкарты
-	string DateOfIssue;		 // Дата выдачи
-	string DateOfExpiration; // Дата возврата
+	string Passport;		 // РќРѕРјРµСЂ РїР°СЃРїРѕСЂС‚Р°
+	string SimID;			 // РќРѕРјРµСЂ СЃРёРјРєР°СЂС‚С‹
+	string DateOfIssue;		 // Р”Р°С‚Р° РІС‹РґР°С‡Рё
+	string DateOfExpiration; // Р”Р°С‚Р° РІРѕР·РІСЂР°С‚Р°
 
 public:
 	SimOwning(string, string);

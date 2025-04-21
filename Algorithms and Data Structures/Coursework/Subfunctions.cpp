@@ -1,10 +1,10 @@
-#include "ctime"
+п»ї#include "ctime"
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-// Перевод времени в удобный формат
+// РџРµСЂРµРІРѕРґ РІСЂРµРјРµРЅРё РІ СѓРґРѕР±РЅС‹Р№ С„РѕСЂРјР°С‚
 string GetDateByTime(time_t arg1)
 {
 	tm date_struct;
@@ -15,7 +15,7 @@ string GetDateByTime(time_t arg1)
 	return s;
 }
 
-// Функции валидации данных
+// Р¤СѓРЅРєС†РёРё РІР°Р»РёРґР°С†РёРё РґР°РЅРЅС‹С…
 bool IsPassportValid(string ID)
 {
 	if (ID.length() != 11)
@@ -83,7 +83,7 @@ bool IsYearValid(int year)
 	return true;
 }
 
-// Функции запроса правильных данных
+// Р¤СѓРЅРєС†РёРё Р·Р°РїСЂРѕСЃР° РїСЂР°РІРёР»СЊРЅС‹С… РґР°РЅРЅС‹С…
 
 string GetPassportNo()
 {
@@ -93,8 +93,8 @@ string GetPassportNo()
 
 	while (not(IsPassportValid(x)))
 	{
-		cout << "Правильный формат: NNNN-NNNNNN" << endl;
-		cout << "Повторите ввод: ";
+		cout << "РџСЂР°РІРёР»СЊРЅС‹Р№ С„РѕСЂРјР°С‚: NNNN-NNNNNN" << endl;
+		cout << "РџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ: ";
 		getline(cin, x);
 	}
 
@@ -109,8 +109,8 @@ string GetSimNo()
 
 	while (not(IsSimValid(x)))
 	{
-		cout << "Правильный формат: NNN-NNNNNNN" << endl;
-		cout << "Повторите ввод: ";
+		cout << "РџСЂР°РІРёР»СЊРЅС‹Р№ С„РѕСЂРјР°С‚: NNN-NNNNNNN" << endl;
+		cout << "РџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ: ";
 		getline(cin, x);
 	}
 
@@ -133,7 +133,7 @@ int GetInt(int a = 0, int b = 0)
 	{
 		cin.clear();
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-		cout << "Повторите ввод: ";
+		cout << "РџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ: ";
 		cin >> x;
 	}
 
@@ -151,7 +151,7 @@ int GetValidYear()
 	{
 		cin.clear();
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-		cout << "Повторите ввод: ";
+		cout << "РџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ: ";
 		cin >> x;
 	}
 

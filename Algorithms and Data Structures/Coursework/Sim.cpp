@@ -1,4 +1,4 @@
-#include "Classes.h"
+п»ї#include "Classes.h"
 using namespace std;
 
 Sim::Sim()
@@ -47,9 +47,9 @@ string Sim::IsAvailable() const
 	switch (Available)
 	{
 	case (true):
-		return "Да";
+		return "Р”Р°";
 	case (false):
-		return "Нет";
+		return "РќРµС‚";
 	}
 	return "-";
 }
@@ -59,13 +59,13 @@ string Sim::TariffToString() const
 	switch (TarrifInfo)
 	{
 	case (Tarrif::Base):
-		return "Базовый";
+		return "Р‘Р°Р·РѕРІС‹Р№";
 	case (Tarrif::Medium):
-		return "Базовый+";
+		return "Р‘Р°Р·РѕРІС‹Р№+";
 	case (Tarrif::Super):
-		return "Супер";
+		return "РЎСѓРїРµСЂ";
 	case (Tarrif::Ultra):
-		return "Ультра";
+		return "РЈР»СЊС‚СЂР°";
 	}
 	return "";
 }

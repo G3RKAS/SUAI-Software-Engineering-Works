@@ -1,8 +1,8 @@
-#include "SimOwningList.h"
+п»ї#include "SimOwningList.h"
 #include "SubFunctions.h"
 #include "AVLTree.h"
 
-// Очистка памяти
+// РћС‡РёСЃС‚РєР° РїР°РјСЏС‚Рё
 void ClearList(SimOwningList** Root)
 {
 	if (not(*Root))
@@ -23,7 +23,7 @@ void ClearList(SimOwningList** Root)
 	*Root = nullptr;
 }
 
-// Создание пустого спика размером N
+// РЎРѕР·РґР°РЅРёРµ РїСѓСЃС‚РѕРіРѕ СЃРїРёРєР° СЂР°Р·РјРµСЂРѕРј N
 SimOwningList* MakeListOfN(int n)
 {
 	SimOwningList* OwningList = nullptr;
@@ -36,12 +36,12 @@ SimOwningList* MakeListOfN(int n)
 	return OwningList;
 }
 
-// Вывод списка
+// Р’С‹РІРѕРґ СЃРїРёСЃРєР°
 void PrintList(SimOwningList* Root)
 {
 	if (not(Root))
 	{
-		cout << "Информация по выдачам и возвратам пустая" << endl;
+		cout << "РРЅС„РѕСЂРјР°С†РёСЏ РїРѕ РІС‹РґР°С‡Р°Рј Рё РІРѕР·РІСЂР°С‚Р°Рј РїСѓСЃС‚Р°СЏ" << endl;
 		return;
 	}
 
@@ -50,16 +50,16 @@ void PrintList(SimOwningList* Root)
 		if (Root->OwningInfo)
 		{
 			cout << endl;
-			cout << "Номер SIM " << Root->OwningInfo->GetSimID() << endl;
-			cout << "Паспорт клиента " << Root->OwningInfo->GetPassport() << endl;
-			cout << "Дата выдачи: " << Root->OwningInfo->GetDateOfIssue() << endl;
-			cout << "Дата окончания пользования: " << Root->OwningInfo->GetDateOfExpiration() << endl;
+			cout << "РќРѕРјРµСЂ SIM " << Root->OwningInfo->GetSimID() << endl;
+			cout << "РџР°СЃРїРѕСЂС‚ РєР»РёРµРЅС‚Р° " << Root->OwningInfo->GetPassport() << endl;
+			cout << "Р”Р°С‚Р° РІС‹РґР°С‡Рё: " << Root->OwningInfo->GetDateOfIssue() << endl;
+			cout << "Р”Р°С‚Р° РѕРєРѕРЅС‡Р°РЅРёСЏ РїРѕР»СЊР·РѕРІР°РЅРёСЏ: " << Root->OwningInfo->GetDateOfExpiration() << endl;
 		}
 		Root = Root->next;
 	}
 }
 
-// Получение длины списка
+// РџРѕР»СѓС‡РµРЅРёРµ РґР»РёРЅС‹ СЃРїРёСЃРєР°
 int GetSize(SimOwningList* Root)
 {
 	int size = 0;
@@ -71,7 +71,7 @@ int GetSize(SimOwningList* Root)
 	return size;
 }
 
-// Установить N по счёту элемент на другой
+// РЈСЃС‚Р°РЅРѕРІРёС‚СЊ N РїРѕ СЃС‡С‘С‚Сѓ СЌР»РµРјРµРЅС‚ РЅР° РґСЂСѓРіРѕР№
 void SetElementInListOnIndex(SimOwningList* Root, int index, SimOwning* OwningInfo)
 {
 	int ListIndex = 0;
@@ -85,7 +85,7 @@ void SetElementInListOnIndex(SimOwningList* Root, int index, SimOwning* OwningIn
 									 OwningInfo->GetDateOfExpiration());
 }
 
-// Полученить элемент по порядку(инжексу)
+// РџРѕР»СѓС‡РµРЅРёС‚СЊ СЌР»РµРјРµРЅС‚ РїРѕ РїРѕСЂСЏРґРєСѓ(РёРЅР¶РµРєСЃСѓ)
 SimOwning* GetElementByIndex(SimOwningList* Root, int index)
 {
 	int ListIndex = 0;
@@ -98,7 +98,7 @@ SimOwning* GetElementByIndex(SimOwningList* Root, int index)
 	return Root->OwningInfo;
 }
 
-// Получение смещения для сортировки подсчётом
+// РџРѕР»СѓС‡РµРЅРёРµ СЃРјРµС‰РµРЅРёСЏ РґР»СЏ СЃРѕСЂС‚РёСЂРѕРІРєРё РїРѕРґСЃС‡С‘С‚РѕРј
 int GetKForSort(SimOwningList* Root, string SimID, int ListSize, int SourceIndex)
 {
 	int k = 0;
@@ -120,7 +120,7 @@ int GetKForSort(SimOwningList* Root, string SimID, int ListSize, int SourceIndex
 	return k;
 }
 
-// Сортировка подсчётом
+// РЎРѕСЂС‚РёСЂРѕРІРєР° РїРѕРґСЃС‡С‘С‚РѕРј
 void SortList(SimOwningList** Root)
 {
 	SimOwningList* NewOwningList = nullptr;
@@ -140,7 +140,7 @@ void SortList(SimOwningList** Root)
 	*Root = NewOwningList;
 }
 
-// Выдача симкарты клиенту
+// Р’С‹РґР°С‡Р° СЃРёРјРєР°СЂС‚С‹ РєР»РёРµРЅС‚Сѓ
 void GiveSim(SimOwningList** Root, SimOwning* OwningInfo)
 {
 	SimOwningList* cur = *Root;
@@ -164,7 +164,7 @@ void GiveSim(SimOwningList** Root, SimOwning* OwningInfo)
 	}
 }
 
-// Возврат симкарты от клиента
+// Р’РѕР·РІСЂР°С‚ СЃРёРјРєР°СЂС‚С‹ РѕС‚ РєР»РёРµРЅС‚Р°
 bool ReturnSim(SimOwningList* Root, string ClientPassport, string ClientSim)
 {
 	while (Root and (Root->OwningInfo->GetSimID() != ClientSim or Root->OwningInfo->GetPassport() != ClientPassport))
@@ -181,7 +181,7 @@ bool ReturnSim(SimOwningList* Root, string ClientPassport, string ClientSim)
 	return false;
 }
 
-// Владеет ли клиент симкартой
+// Р’Р»Р°РґРµРµС‚ Р»Рё РєР»РёРµРЅС‚ СЃРёРјРєР°СЂС‚РѕР№
 bool IsClientOwningSim(SimOwningList* Root, string ClientPassport, string ClientSim)
 {
 	while (Root and (Root->OwningInfo->GetSimID() != ClientSim or Root->OwningInfo->GetPassport() != ClientPassport))
@@ -197,7 +197,7 @@ bool IsClientOwningSim(SimOwningList* Root, string ClientPassport, string Client
 	return false;
 }
 
-// Получить информацию о владении симкартой
+// РџРѕР»СѓС‡РёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РІР»Р°РґРµРЅРёРё СЃРёРјРєР°СЂС‚РѕР№
 SimOwning* GetSimOwnningInfo(SimOwningList* Root, string ClientSim)
 {
 	while (Root and (Root->OwningInfo->GetSimID() != ClientSim or Root->OwningInfo->GetDateOfExpiration() != "-"))
@@ -212,7 +212,7 @@ SimOwning* GetSimOwnningInfo(SimOwningList* Root, string ClientSim)
 	return nullptr;
 }
 
-// Получение номеров симкарт клиента
+// РџРѕР»СѓС‡РµРЅРёРµ РЅРѕРјРµСЂРѕРІ СЃРёРјРєР°СЂС‚ РєР»РёРµРЅС‚Р°
 vector<string> GetAllSimsOfClient(SimOwningList* Root, string ClientPassport)
 {
 	vector<string> ClientSims{};

@@ -1,8 +1,8 @@
-#pragma once
+п»ї#pragma once
 #include "Classes.h"
 #include "SimOwningList.h"
 
-// Хэш-таблица
+// РҐСЌС€-С‚Р°Р±Р»РёС†Р°
 struct SimTable
 {
 	const static int TableSize = 5000;

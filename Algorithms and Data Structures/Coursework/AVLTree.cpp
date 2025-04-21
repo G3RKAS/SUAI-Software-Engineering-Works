@@ -1,10 +1,10 @@
-#include "AVLTree.h"
+п»ї#include "AVLTree.h"
 #include "SimOwningList.h"
 #include "SimTable.h"
 #include "math.h"
 #include <algorithm>
 
-// Вывод дерева(номеров паспорта)
+// Р’С‹РІРѕРґ РґРµСЂРµРІР°(РЅРѕРјРµСЂРѕРІ РїР°СЃРїРѕСЂС‚Р°)
 void ShowTree(Tree* Root, int level)
 {
 	if (Root != nullptr)
@@ -17,7 +17,7 @@ void ShowTree(Tree* Root, int level)
 	}
 }
 
-// Вывод клиентов(прямой обход)
+// Р’С‹РІРѕРґ РєР»РёРµРЅС‚РѕРІ(РїСЂСЏРјРѕР№ РѕР±С…РѕРґ)
 void ShowClients(Tree* Root)
 {
 	if (Root == nullptr)
@@ -26,17 +26,17 @@ void ShowClients(Tree* Root)
 	}
 
 	cout << endl;
-	cout << "Клиент " << Root->ClientInfo->GetFIO() << endl;
-	cout << "Паспорт " << Root->ClientInfo->GetPassport() << endl;
-	cout << "Выдан: " << Root->ClientInfo->GetPassportInfo() << endl;
-	cout << "Год рождения: " << Root->ClientInfo->GetYearBirth() << endl;
-	cout << "Адрес проживания: " << Root->ClientInfo->GetAdress() << endl;
+	cout << "РљР»РёРµРЅС‚ " << Root->ClientInfo->GetFIO() << endl;
+	cout << "РџР°СЃРїРѕСЂС‚ " << Root->ClientInfo->GetPassport() << endl;
+	cout << "Р’С‹РґР°РЅ: " << Root->ClientInfo->GetPassportInfo() << endl;
+	cout << "Р“РѕРґ СЂРѕР¶РґРµРЅРёСЏ: " << Root->ClientInfo->GetYearBirth() << endl;
+	cout << "РђРґСЂРµСЃ РїСЂРѕР¶РёРІР°РЅРёСЏ: " << Root->ClientInfo->GetAdress() << endl;
 
 	ShowClients(Root->left);
 	ShowClients(Root->right);
 }
 
-// Очистка памяти от дерева
+// РћС‡РёСЃС‚РєР° РїР°РјСЏС‚Рё РѕС‚ РґРµСЂРµРІР°
 void DeleteTree(Tree** Root)
 {
 	if (*Root == nullptr)
@@ -51,7 +51,7 @@ void DeleteTree(Tree** Root)
 	*Root = nullptr;
 }
 
-// Получение высоты поддерева
+// РџРѕР»СѓС‡РµРЅРёРµ РІС‹СЃРѕС‚С‹ РїРѕРґРґРµСЂРµРІР°
 int GetHeight(Tree* Root)
 {
 	if (Root == nullptr)
@@ -64,19 +64,19 @@ int GetHeight(Tree* Root)
 	}
 }
 
-// Исправление высот поддеревьев после балланса
+// РСЃРїСЂР°РІР»РµРЅРёРµ РІС‹СЃРѕС‚ РїРѕРґРґРµСЂРµРІСЊРµРІ РїРѕСЃР»Рµ Р±Р°Р»Р»Р°РЅСЃР°
 void FixHeight(Tree** Root)
 {
 	(*Root)->h = max(GetHeight((*Root)->left), GetHeight((*Root)->right)) + 1;
 }
 
-// Разница высот поддеревьев
+// Р Р°Р·РЅРёС†Р° РІС‹СЃРѕС‚ РїРѕРґРґРµСЂРµРІСЊРµРІ
 int GetHeightDiff(Tree* Root)
 {
 	return GetHeight(Root->right) - GetHeight(Root->left);
 }
 
-// Малый правый поворот
+// РњР°Р»С‹Р№ РїСЂР°РІС‹Р№ РїРѕРІРѕСЂРѕС‚
 void RotateRight(Tree** Root)
 {
 	Tree* left = (*Root)->left;
@@ -87,7 +87,7 @@ void RotateRight(Tree** Root)
 	*Root = left;
 }
 
-// Малый левый поворот
+// РњР°Р»С‹Р№ Р»РµРІС‹Р№ РїРѕРІРѕСЂРѕС‚
 void RotateLeft(Tree** Root)
 {
 	Tree* right = (*Root)->right;
@@ -98,7 +98,7 @@ void RotateLeft(Tree** Root)
 	*Root = right;
 }
 
-// Балансировка поворотами
+// Р‘Р°Р»Р°РЅСЃРёСЂРѕРІРєР° РїРѕРІРѕСЂРѕС‚Р°РјРё
 void BalanceTree(Tree** Root)
 {
 	FixHeight(Root);
@@ -121,7 +121,7 @@ void BalanceTree(Tree** Root)
 	}
 }
 
-// Добавление элемента в дерево
+// Р”РѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РІ РґРµСЂРµРІРѕ
 void AddElem(Tree** Root, Client* ClientToAdd)
 {
 	if (*Root == nullptr)
@@ -145,7 +145,7 @@ void AddElem(Tree** Root, Client* ClientToAdd)
 	BalanceTree(Root);
 }
 
-// Поиск минимального элемента в дереве
+// РџРѕРёСЃРє РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РІ РґРµСЂРµРІРµ
 Tree* FindMin(Tree* Root)
 {
 	if (Root->left)
@@ -158,7 +158,7 @@ Tree* FindMin(Tree* Root)
 	}
 }
 
-// Удаление минимального в дереве
+// РЈРґР°Р»РµРЅРёРµ РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ РІ РґРµСЂРµРІРµ
 void RemoveMin(Tree** Root)
 {
 	if ((*Root)->left == 0)
@@ -170,7 +170,7 @@ void RemoveMin(Tree** Root)
 	BalanceTree(Root);
 }
 
-// Удаление элемента в дереве
+// РЈРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РІ РґРµСЂРµРІРµ
 bool DeleteElem(Tree** Root, string Passport)
 {
 	if (*Root == nullptr)
@@ -210,7 +210,7 @@ bool DeleteElem(Tree** Root, string Passport)
 	}
 }
 
-// Поиск клиента по паспорту в дереве
+// РџРѕРёСЃРє РєР»РёРµРЅС‚Р° РїРѕ РїР°СЃРїРѕСЂС‚Сѓ РІ РґРµСЂРµРІРµ
 Client* FindClientByPassport(Tree** Root, string Passport)
 {
 	if (*Root == nullptr)
@@ -233,7 +233,7 @@ Client* FindClientByPassport(Tree** Root, string Passport)
 	return nullptr;
 }
 
-// Поиск текста прямой
+// РџРѕРёСЃРє С‚РµРєСЃС‚Р° РїСЂСЏРјРѕР№
 bool FindSubTextInText(string NodeInfo, string ClientInfo)
 {
 	int all;
@@ -263,7 +263,7 @@ bool FindSubTextInText(string NodeInfo, string ClientInfo)
 	return false;
 }
 
-// Поиск клиентов по ФИО(прямой обход)
+// РџРѕРёСЃРє РєР»РёРµРЅС‚РѕРІ РїРѕ Р¤РРћ(РїСЂСЏРјРѕР№ РѕР±С…РѕРґ)
 void PrintAllClientsByFIO(Tree* Root, string FIO, int& count)
 {
 	if (Root == nullptr)
@@ -275,18 +275,18 @@ void PrintAllClientsByFIO(Tree* Root, string FIO, int& count)
 	{
 		count++;
 		cout << endl;
-		cout << "Клиент " << Root->ClientInfo->GetFIO() << endl;
-		cout << "Паспорт " << Root->ClientInfo->GetPassport() << endl;
-		cout << "Выдан: " << Root->ClientInfo->GetPassportInfo() << endl;
-		cout << "Год рождения: " << Root->ClientInfo->GetYearBirth() << endl;
-		cout << "Адрес проживания: " << Root->ClientInfo->GetAdress() << endl;
+		cout << "РљР»РёРµРЅС‚ " << Root->ClientInfo->GetFIO() << endl;
+		cout << "РџР°СЃРїРѕСЂС‚ " << Root->ClientInfo->GetPassport() << endl;
+		cout << "Р’С‹РґР°РЅ: " << Root->ClientInfo->GetPassportInfo() << endl;
+		cout << "Р“РѕРґ СЂРѕР¶РґРµРЅРёСЏ: " << Root->ClientInfo->GetYearBirth() << endl;
+		cout << "РђРґСЂРµСЃ РїСЂРѕР¶РёРІР°РЅРёСЏ: " << Root->ClientInfo->GetAdress() << endl;
 	}
 
 	PrintAllClientsByFIO(Root->left, FIO, count);
 	PrintAllClientsByFIO(Root->right, FIO, count);
 }
 
-// Поиск клиентов по адресу(прямой обход)
+// РџРѕРёСЃРє РєР»РёРµРЅС‚РѕРІ РїРѕ Р°РґСЂРµСЃСѓ(РїСЂСЏРјРѕР№ РѕР±С…РѕРґ)
 void PrintAllClientsByAdress(Tree* Root, string Adress, int& count)
 {
 	if (Root == nullptr)
@@ -298,16 +298,16 @@ void PrintAllClientsByAdress(Tree* Root, string Adress, int& count)
 	{
 		count++;
 		cout << endl;
-		cout << "Клиент " << Root->ClientInfo->GetFIO() << endl;
-		cout << "Паспорт " << Root->ClientInfo->GetPassport() << endl;
-		cout << "Адрес проживания: " << Root->ClientInfo->GetAdress() << endl;
+		cout << "РљР»РёРµРЅС‚ " << Root->ClientInfo->GetFIO() << endl;
+		cout << "РџР°СЃРїРѕСЂС‚ " << Root->ClientInfo->GetPassport() << endl;
+		cout << "РђРґСЂРµСЃ РїСЂРѕР¶РёРІР°РЅРёСЏ: " << Root->ClientInfo->GetAdress() << endl;
 	}
 
 	PrintAllClientsByAdress(Root->left, Adress, count);
 	PrintAllClientsByAdress(Root->right, Adress, count);
 }
 
-// Очистка всех клиентов и корректировка информации в остальных структурах(Обратных обход)
+// РћС‡РёСЃС‚РєР° РІСЃРµС… РєР»РёРµРЅС‚РѕРІ Рё РєРѕСЂСЂРµРєС‚РёСЂРѕРІРєР° РёРЅС„РѕСЂРјР°С†РёРё РІ РѕСЃС‚Р°Р»СЊРЅС‹С… СЃС‚СЂСѓРєС‚СѓСЂР°С…(РћР±СЂР°С‚РЅС‹С… РѕР±С…РѕРґ)
 void ClearAllOfClient(Tree** Root, SimTable& SimInfos, SimOwningList* OwningRoot)
 {
 	if (*Root == nullptr)
@@ -330,11 +330,11 @@ void ClearAllOfClient(Tree** Root, SimTable& SimInfos, SimOwningList* OwningRoot
 			Sim* SimInfo = FindSim(SimInfos, *first);
 			ReturnSim(OwningRoot, ClientInfo->GetPassport(), SimInfo->GetID());
 			SimInfo->SetAvailable(true);
-			cout << "SIM " << SimInfo->GetID() << " освобождена" << endl;
+			cout << "SIM " << SimInfo->GetID() << " РѕСЃРІРѕР±РѕР¶РґРµРЅР°" << endl;
 		}
 	}
 
-	cout << "Клиент " << ClientInfo->GetPassport() << " удалён!" << endl;
+	cout << "РљР»РёРµРЅС‚ " << ClientInfo->GetPassport() << " СѓРґР°Р»С‘РЅ!" << endl;
 
 	delete (*Root)->ClientInfo;
 	delete (*Root);

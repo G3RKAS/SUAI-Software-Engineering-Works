@@ -1,8 +1,8 @@
-#pragma once
+п»ї#pragma once
 #include "Classes.h"
 #include <vector>
 
-// Узел списка
+// РЈР·РµР» СЃРїРёСЃРєР°
 struct SimOwningList
 {
 	SimOwning* OwningInfo;

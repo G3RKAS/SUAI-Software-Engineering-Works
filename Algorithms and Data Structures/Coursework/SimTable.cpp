@@ -1,9 +1,9 @@
-#include "SimTable.h"
+п»ї#include "SimTable.h"
 #include "SimOwningList.h"
 
 Sim SimTable::DeleteSign = Sim();
 
-// Конструктор хэш-таблицы
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ С…СЌС€-С‚Р°Р±Р»РёС†С‹
 SimTable::SimTable()
 {
 	SimInfo = new Sim*[TableSize];
@@ -13,7 +13,7 @@ SimTable::SimTable()
 	}
 }
 
-// Деструктор таблицы
+// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ С‚Р°Р±Р»РёС†С‹
 SimTable::~SimTable()
 {
 	for (int i{0}; i < TableSize; i++)
@@ -28,7 +28,7 @@ SimTable::~SimTable()
 	SimInfo = nullptr;
 }
 
-// Хэш-функция
+// РҐСЌС€-С„СѓРЅРєС†РёСЏ
 int GetHash(string SIMID)
 {
 	int hash = 0;
@@ -42,7 +42,7 @@ int GetHash(string SIMID)
 	return hash;
 }
 
-// Добавление элемента в таблицу
+// Р”РѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РІ С‚Р°Р±Р»РёС†Сѓ
 bool AddSim(SimTable& SimInfos, Sim* SimData)
 {
 	int SimKey = GetHash(SimData->GetID());
@@ -62,7 +62,7 @@ bool AddSim(SimTable& SimInfos, Sim* SimData)
 	return true;
 }
 
-// Удаление элемента
+// РЈРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р°
 bool DeleteSim(SimTable& SimInfos, string SimID)
 {
 	int SimKey = GetHash(SimID);
@@ -91,7 +91,7 @@ bool DeleteSim(SimTable& SimInfos, string SimID)
 	return false;
 }
 
-// Поиск элемента
+// РџРѕРёСЃРє СЌР»РµРјРµРЅС‚Р°
 Sim* FindSim(SimTable& SimInfos, string SimID)
 {
 	int SimKey = GetHash(SimID);
@@ -118,7 +118,7 @@ Sim* FindSim(SimTable& SimInfos, string SimID)
 	return nullptr;
 }
 
-// Очистка памяти
+// РћС‡РёСЃС‚РєР° РїР°РјСЏС‚Рё
 void ClearAllSim(SimTable& SimInfos)
 {
 	for (int i{0}; i < SimTable::TableSize; i++)
@@ -132,7 +132,7 @@ void ClearAllSim(SimTable& SimInfos)
 	}
 }
 
-// Получение случайного номера симкарты
+// РџРѕР»СѓС‡РµРЅРёРµ СЃР»СѓС‡Р°Р№РЅРѕРіРѕ РЅРѕРјРµСЂР° СЃРёРјРєР°СЂС‚С‹
 string GetRandomSimID()
 {
 	string SIMID = "";
@@ -152,7 +152,7 @@ string GetRandomSimID()
 	return SIMID;
 }
 
-// Проверка на пустоту таблицу
+// РџСЂРѕРІРµСЂРєР° РЅР° РїСѓСЃС‚РѕС‚Сѓ С‚Р°Р±Р»РёС†Сѓ
 bool IsEmpty(SimTable& SimInfos)
 {
 	for (int i{0}; i < SimTable::TableSize; i++)
@@ -166,7 +166,7 @@ bool IsEmpty(SimTable& SimInfos)
 	return true;
 }
 
-// Вывод всех симкарт
+// Р’С‹РІРѕРґ РІСЃРµС… СЃРёРјРєР°СЂС‚
 void PrintAllOfSims(SimTable& SimInfos)
 {
 	for (int i{0}; i < SimTable::TableSize; i++)
@@ -175,15 +175,15 @@ void PrintAllOfSims(SimTable& SimInfos)
 		if ((Sim) and (Sim != &SimTable::DeleteSign))
 		{
 			cout << endl;
-			cout << "Номер SIM " << Sim->GetID() << endl;
-			cout << "Тариф: " << Sim->TariffToString() << endl;
-			cout << "Год выпуска: " << Sim->GetYearRelease() << endl;
-			cout << "Наличие: " << Sim->IsAvailable() << endl;
+			cout << "РќРѕРјРµСЂ SIM " << Sim->GetID() << endl;
+			cout << "РўР°СЂРёС„: " << Sim->TariffToString() << endl;
+			cout << "Р“РѕРґ РІС‹РїСѓСЃРєР°: " << Sim->GetYearRelease() << endl;
+			cout << "РќР°Р»РёС‡РёРµ: " << Sim->IsAvailable() << endl;
 		}
 	}
 }
 
-// Вывод всех симкарт по тарифу
+// Р’С‹РІРѕРґ РІСЃРµС… СЃРёРјРєР°СЂС‚ РїРѕ С‚Р°СЂРёС„Сѓ
 void PrintAllOfSimsByTarrif(SimTable& SimInfos, Sim::Tarrif TarrifInfo, int& count)
 {
 	for (int i{0}; i < SimTable::TableSize; i++)
@@ -193,14 +193,14 @@ void PrintAllOfSimsByTarrif(SimTable& SimInfos, Sim::Tarrif TarrifInfo, int& cou
 		{
 			count++;
 			cout << endl;
-			cout << "Номер SIM " << Sim->GetID() << endl;
-			cout << "Тариф: " << Sim->TariffToString() << endl;
-			cout << "Год выпуска: " << Sim->GetYearRelease() << endl;
+			cout << "РќРѕРјРµСЂ SIM " << Sim->GetID() << endl;
+			cout << "РўР°СЂРёС„: " << Sim->TariffToString() << endl;
+			cout << "Р“РѕРґ РІС‹РїСѓСЃРєР°: " << Sim->GetYearRelease() << endl;
 		}
 	}
 }
 
-// Удаление всех симкарт и корректировка других структур
+// РЈРґР°Р»РµРЅРёРµ РІСЃРµС… СЃРёРјРєР°СЂС‚ Рё РєРѕСЂСЂРµРєС‚РёСЂРѕРІРєР° РґСЂСѓРіРёС… СЃС‚СЂСѓРєС‚СѓСЂ
 void ClearAllSims(SimTable& SimInfos, SimOwningList* OwningList)
 {
 	for (int i{0}; i < SimTable::TableSize; i++)
@@ -219,6 +219,6 @@ void ClearAllSims(SimTable& SimInfos, SimOwningList* OwningList)
 		
 		delete SimInfos.SimInfo[i];
 		SimInfos.SimInfo[i] = &SimTable::DeleteSign;
-		cout << "SIM удалена!" << endl;
+		cout << "SIM СѓРґР°Р»РµРЅР°!" << endl;
 	}
 }
