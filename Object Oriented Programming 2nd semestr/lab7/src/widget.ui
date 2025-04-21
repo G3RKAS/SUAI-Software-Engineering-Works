@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>688</width>
+    <height>409</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ВорошиловДаниил4333К</string>
+  </property>
+  <widget class="QLabel" name="nameLabel">
+   <property name="geometry">
+    <rect>
+     <x>33</x>
+     <y>33</y>
+     <width>34</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Имя:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="houseLabel">
+   <property name="geometry">
+    <rect>
+     <x>33</x>
+     <y>87</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Класс жилья:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="livingLabel">
+   <property name="geometry">
+    <rect>
+     <x>33</x>
+     <y>114</y>
+     <width>157</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Число проживающих:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="areaLabel">
+   <property name="geometry">
+    <rect>
+     <x>33</x>
+     <y>141</y>
+     <width>69</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Площадь:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="insurPeriodLabel">
+   <property name="geometry">
+    <rect>
+     <x>33</x>
+     <y>168</y>
+     <width>132</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Срок страхования:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="insurPriceLabel">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>264</y>
+     <width>215</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Стоимость страхового взноса:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="name">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>33</y>
+     <width>271</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="age">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>60</y>
+     <width>271</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="living">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>114</y>
+     <width>271</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="area">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>141</y>
+     <width>271</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="insurPeriod">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>168</y>
+     <width>271</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>6 месяцев</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>1 год</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>18 месяцев</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="house">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>87</y>
+     <width>271</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Квартира эконом-класса </string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Элитная квартира</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Таун-хаус</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Коттедж</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="insurPrice">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>264</y>
+     <width>271</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="calculate">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>340</y>
+     <width>140</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Расчитать</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="lastInput">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>340</y>
+     <width>150</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Последний запрос</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="ageLabel">
+   <property name="geometry">
+    <rect>
+     <x>33</x>
+     <y>60</y>
+     <width>59</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Возраст:</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,1 @@
+﻿Использование виджетов QGroupBox и QRadioButton
